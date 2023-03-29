@@ -1,3 +1,9 @@
+footer {
+    padding: 10px;
+    margin-top: 50px;
+
+}
+
 body {
     background-color: rgba(78, 162, 81, 0.37);
     color: white;
@@ -11,9 +17,7 @@ body {
 
 h1 {
     color: black;
-
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
 
   table {
@@ -29,9 +33,7 @@ h1 {
     border: 3px solid black;
   }
   
-  .cell img {
-    height: 30px;
-  }
+ 
   
   .modal {
     display: none;

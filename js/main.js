@@ -1,7 +1,8 @@
 'use strict'
+const FLAG = '🚩'
 const MINE = '💣'
 var gBoard
-
+var gElCell
 
 var gLevel = {
     size: 4,
@@ -20,6 +21,7 @@ function onInit() {
     gBoard = buildBoard(4)
     console.log(gBoard)
     renderBoard(gBoard)
+    onCellMarked()
 }
 
 
@@ -33,10 +35,12 @@ function buildBoard(size) {
                 minesAroundCount: null,
                 isShown: false,
                 isMine: false,
-                isMarked: true
+                isMarked: false
             }
+            // if (Math.random() > 0.7) board[i][j].isMine = true
         }
     }
+
     board[0][3].isMine = true
     board[3][1].isMine = true
     // console.log('board[3][1]', board[3][1])
@@ -63,7 +67,7 @@ function renderBoard(board) {
             if (currCell.isMine === true) cellClass += ' bomb'
             else cellClass += ' notBomb'
 
-            strHTML += `\t<td class="coverd cell ${cellClass}" onclick="onCellClicked(this,${i},${j})">`
+            strHTML += `\t<td class="cell ${cellClass}" oncontextmenu="checkMouse(event,this,${i},${j})" onclick =checkMouse(event,this,${i},${j}) ">`
 
             strHTML += '</td>\n'
         }
@@ -72,24 +76,73 @@ function renderBoard(board) {
 
     const elBoard = document.querySelector('.board')
     elBoard.innerHTML = strHTML
+
+
 }
 
 
-function onCellClicked(elCell, cellI, cellJ) {
-var currCell = gBoard[cellI][cellJ]
+
+function checkMouse(event, elCell, cellI, cellJ) {
+    if (event.button === 0) onCellClicked(elCell, cellI, cellJ)
+    console.log(event)
+    if (event.button === 2) onCellMarked2(elCell, cellI, cellJ)
+}
+
+
+
+function onCellClicked(elCell, cellI, cellJ) {            //לחיצה על כפתור שמאל
+    console.log(elCell)
+    var currCell = gBoard[cellI][cellJ]
+    if (currCell.isMarked) return
     if (!currCell.isMine) {
-        // console.log('h')
+        // console.log('currCell' , currCell)
         elCell.classList.add('reveal')
-        // console.log('after' , elCell)
-        if (currCell.minesAroundCount!== 0){
-        elCell.innerText = currCell.minesAroundCount
-    }
+        currCell.isShown = true
+        // console.log('after' , currCell)
+        if (currCell.minesAroundCount !== 0) {
+            elCell.innerText = currCell.minesAroundCount
+            currCell.isShown = true
+        }
     } else {
         elCell.innerText = MINE
+        currCell.isShown = true
+        currCell.isMine = true
         elCell.classList.add('reveal')
-
     }
+}
 
+
+function onCellMarked() {           //הפונקציה שבכללי מבטלת לחיצה על ימין
+    var elCells = document.querySelectorAll('.cell')
+    // console.log(elCells)
+    for (var i = 0; i < elCells.length; i++) {
+        // console.log(elCells[i]) 
+        elCells[i].addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+        })
+    }
+}
+
+
+
+function onCellMarked2(elCell, cellI, cellJ) {                //לחיצה על כפתור ימין
+    // var elCells = document.querySelectorAll('.cell')
+    // console.log(elCells)
+    // for (var i = 0; i < elCells.length; i++) {
+    // console.log(elCells[i]) 
+    var currCell = gBoard[cellI][cellJ]
+    if (currCell.isShown) return
+
+    else {
+        if (!currCell.isMarked) {
+            elCell.innerText = FLAG
+            currCell.isMarked = true
+        } else {
+
+            elCell.innerText = ''
+            currCell.isMarked = false
+        }
+    }
 }
 
 
