@@ -10,11 +10,24 @@
 </head>
     <body class = "body" onload="onInit()">
         <h1>Minesweeper</h1>
-        <!-- <button onclick="onToggleGame(this)">Start</button> -->
+       <div> 
+           <button class="restart" onclick="restartGame()">&#128523;</button>
+       </div>
+        <div>
+            <button class = "levels" onclick="diffChoose(4)">Beginner</button>
+
+            <button class = "levels" onclick="diffChoose(8)"> Medium </button>
+
+            <button class = "levels" onclick="diffChoose(12)"> Expert </button>
+
+        </div>
         <table>
             <tbody class="board">
             </tbody>
         </table>
+        <label class="timeStyle" id="minutes">00</label>
+        <label class="timeStyle" id="colon">:</label>
+        <label class="timeStyle" id="seconds">00</label>
         <footer>Shira Cohen</footer>
 
     <script src="js/my-utils.js"></script>
