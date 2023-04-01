@@ -13,7 +13,7 @@ var gLightMode = true
 
 
 var gLevel = {
-    size: 4,
+    size: 8,
     mines: 0
 }
 
