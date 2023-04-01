@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,30 +9,53 @@
     <link rel="stylesheet" href="css/main.css">
 
 </head>
-    <body class = "body" onload="onInit()">
-        <h1>Minesweeper</h1>
-       <div> 
-           <button class="restart" onclick="restartGame()">&#128523;</button>
-       </div>
-        <div>
-            <button class = "levels" onclick="diffChoose(4)">Beginner</button>
 
-            <button class = "levels" onclick="diffChoose(8)"> Medium </button>
+<body class="body" onload="onInit()">
+    <h1>Minesweeper</h1>
 
-            <button class = "levels" onclick="diffChoose(12)"> Expert </button>
+    <div>
+        <button class="restart" onclick="restartGame()">&#128523;</button>
+    </div>
 
-        </div>
-        <table>
-            <tbody class="board">
-            </tbody>
-        </table>
-        <label class="timeStyle" id="minutes">00</label>
-        <label class="timeStyle" id="colon">:</label>
-        <label class="timeStyle" id="seconds">00</label>
-        <footer>Shira Cohen</footer>
+    <div class="lives"></div>
+
+    <div>
+        <button class="safeBtn" onclick="safeCell()">
+            safe clicks available : <span> 3 </span>
+        </button>
+    </div>
+
+
+    <div>
+        <button class="hint" onclick="hintClick(this)">hint</button>
+        <h2 class="hint"> hints : <span>3 </span> </h2>
+    </div>
+
+    <div>
+        <button class="levels" onclick="diffChoose(4)">Beginner</button>
+
+        <button class="levels" onclick="diffChoose(8)"> Medium </button>
+
+        <button class="levels" onclick="diffChoose(12)"> Expert </button>
+
+    </div>
+    <table>
+        <tbody class="board">
+        </tbody>
+    </table>
+    <label class="timeStyle" id="minutes">00</label>
+    <label class="timeStyle" id="colon">:</label>
+    <label class="timeStyle" id="seconds">00</label>
+
+    <div>
+        <button class="btnMode" onclick="bodyMode()"> Dark mode </button>
+    </div>
+
+    <footer class="footer">Shira Cohen</footer>
 
     <script src="js/my-utils.js"></script>
     <script src="js/main.js"></script>
 
 </body>
+
 </html>

@@ -1,59 +1,125 @@
+.bodyDark {
+  background-color: grey;
+}
+
+.restartDark {
+  background-color: rgb(19, 19, 19);
+}
+
+.hintDark {
+  color: rgb(0, 0, 0);
+}
+
+.btnDark {
+  background-color: rgb(19, 19, 19);
+  color: white;
+}
+
+.h2Dark {
+  color: rgb(19, 19, 19);
+}
+
+.footerDark {
+  color: rgb(19, 19, 19);
+}
+
+.safeBtn {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 1em;
+  background-color: rgb(255, 179, 85);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 5px;
+}
+
+.btnMode {
+  background-color: rgb(106, 105, 105);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 5px;
+}
+
 footer {
-    padding: 10px;
-    margin-top: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 10px;
+  margin-top: 50px;
+  font-size: 1em;
+  color: rgb(46, 46, 46)
+}
+
+.hint {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1em;
+  margin-top: 10px;
+  border-radius: 5px;
 
 }
 
 body {
-    background-color: rgba(78, 162, 81, 0.37);
-    color: white;
-    text-align: center;
-  }
-  
+  background-color: rgba(78, 162, 81, 0.37);
+  color: white;
+  text-align: center;
+}
+
+.timeStyle {
+  color: black;
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.lives {
+  padding-top: 10px;
+  color: red;
+  font-size: 2em;
+
+}
+
 .reveal {
-    background-color: rgb(248, 248, 220);
-    transition: 0.2s;
+  background-color: rgb(251, 255, 200);
+  transition: 0.3s;
 }
 
 h1 {
-    color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-  table {
-    margin: auto;
-  }
-  
-  .cell {
-    color: black;
-    width: 60px;
-    height: 60px;
-    font-size: 1.5em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 3px solid black;
-  }
-  
- 
-  
-  .modal {
-    display: none;
-    border: solid 3px grey;
-    width: 300px;
-    height: 200px;
-    background-color: rgb(222, 226, 228);
-    color: black;
-    font-size: 32px;
-  
-    position: absolute;
-    top: 200px;
-    left: calc(50% - 150px);
-  }
-  
-  .levels {
-    margin-top: 20px;
-    background-color: black;
-    color: rgb(230, 221, 221);
-    padding: 10px;
-    cursor: pointer;
-  }
-  
+h2.hint {
+  color: rgb(1, 1, 1);
+}
+
+table {
+  margin: auto;
+}
+
+.cell {
+  color: rgb(3, 10, 6);
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.restart {
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: larger;
+  padding: inherit;
+}
+
+.levels {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1em;
+  margin-top: 5px;
+  background-color: rgb(4, 6, 4);
+  color: rgb(230, 221, 221);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-left: 2px;
+  margin-right: 2px;
+
+}
